@@ -64,5 +64,3 @@ export const deleteTodo = async (id, userId, setTodo) => {
     console.error("Error deleting todo:", error.message);
   }
 };
-
-// export { getAllTodo, addTodo, updateTodo, deleteTodo };

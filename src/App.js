@@ -19,18 +19,24 @@ function App() {
       try {
         const {
           data: { session },
+          error,
         } = await supabase.auth.getSession();
+        if (error) throw error;
+        console.log("Session:", session); // Debugging line
         setUser(session?.user || null);
       } catch (err) {
         console.error("Error getting user session:", err.message);
+        setError("Failed to get user session.");
       } finally {
         setLoading(false);
       }
     };
+
     getUserData();
 
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        console.log("Auth state changed:", { event, session }); // Debugging line
         setUser(session?.user || null);
         setLoading(false);
       }
@@ -61,6 +67,7 @@ function App() {
     });
     if (error) {
       console.error("Login error:", error.message);
+      setError("Failed to log in.");
     }
   };
 
@@ -68,6 +75,7 @@ function App() {
     const { error } = await supabase.auth.signOut();
     if (error) {
       console.error("Logout error:", error.message);
+      setError("Failed to log out.");
     }
   };
 
