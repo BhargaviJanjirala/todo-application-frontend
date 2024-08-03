@@ -1,13 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 1rem;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+.header button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  width: 80px;
+  border-radius: 5px;
+}
+.todos-container {
+  margin-top: 20px;
+  width: 80%;
+}
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0, 0.5rem;
+  border-bottom: 1px solid #000;
+  margin-right: 20px;
+}
+.input-container button {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 5px;
+  width: 100px;
+}
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+ul li p {
+  width: 85%;
+  word-wrap: break-word;
+}
+ul li {
+  background-color: #091013;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.icons {
+  display: flex;
+  gap: 5px;
+}
+.icons button {
+  background: none;
+  border: none;
+}
+.icons button .icon {
+  color: #fff;
+  font-size: 20px;
+}
+.login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+.login-container div {
+  display: flex;
+}
+.login-container button {
+  background: linear-gradient(
+    90deg,
+    #4285f4,
+    #db4437,
+    #f4b400,
+    #0f9d58,
+    #4285f4
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid #4285f4;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: white;
+  margin-left: 10px;
+}
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: rgb(101, 145, 207);
+  font-size: 20px;
 }
